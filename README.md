@@ -52,3 +52,6 @@ Because the game uses ES6 features and the Web Audio API, you need to run it thr
 ## 🤝 Contributing
 
 Feel free to fork this project and add new low-poly assets, more complex typing modes, or even new procedurally generated audio scales!
+
+
+<!-- Docs reviewed and formatted -->
