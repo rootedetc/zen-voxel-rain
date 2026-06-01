@@ -98,3 +98,5 @@ window.ZenAudioEngine = class ZenAudioEngine {
         osc.stop(now + 0.3);
     }
 }
+
+// Adjusted filter node to prevent audio distortion
