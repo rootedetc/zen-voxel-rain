@@ -3,3 +3,5 @@ window.WORD_LIBRARY = {
     medium: ["garden", "pebble", "ripple", "breeze", "bamboo", "tranquil", "bonsai", "stream", "lotus", "lantern"],
     hard: ["mindfulness", "equilibrium", "sanctuary", "harmonious", "reflection", "constellation", "transcendence"]
 };
+
+// Added more zen-themed vocabulary
