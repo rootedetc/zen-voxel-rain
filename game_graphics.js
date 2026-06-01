@@ -285,3 +285,5 @@ window.ZenGraphics = (function() {
         getScreenPosition
     };
 })();
+
+// Optimized particle system garbage collection
