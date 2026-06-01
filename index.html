@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zen Voxel Rain | Typing Sanctuary</title>
+    <link rel="stylesheet" href="styles.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- Three.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+</head>
+<body>
+    <div id="game-container">
+        <!-- Three.js Canvas -->
+        <canvas id="three-canvas"></canvas>
+
+        <!-- HTML Word Overlay Layer -->
+        <div id="words-layer"></div>
+
+        <!-- Glassmorphism Main Menu HUD -->
+        <div id="start-overlay" class="overlay-panel">
+            <h1 class="glow-text">Zen Voxel Rain</h1>
+            <p>A tranquil typing experience. Clear the falling voxel words to maintain your island's stability.</p>
+            <button id="start-btn" class="glass-btn">Enter Sanctuary</button>
+        </div>
+
+        <!-- Game Over & Leaderboard Submission -->
+        <div id="game-over-overlay" class="overlay-panel hidden">
+            <h2>Pond Stability Disrupted</h2>
+            <p>Your typing scores for this session:</p>
+            <div class="stats-grid">
+                <div>WPM: <span id="final-wpm">0</span></div>
+                <div>Accuracy: <span id="final-acc">0%</span></div>
+            </div>
+            <div class="input-group">
+                <input type="text" id="player-name" placeholder="Enter name" maxlength="15">
+                <button id="save-score-btn" class="glass-btn">Save to Leaderboard</button>
+            </div>
+            <button id="restart-btn" class="glass-btn secondary">Retry</button>
+        </div>
+
+        <!-- In-Game HUD -->
+        <div id="hud" class="hidden">
+            <div class="hud-item" id="wpm-display">WPM: 0</div>
+            <div id="stability-bar-container">
+                <div id="stability-bar" style="width: 100%;"></div>
+            </div>
+            <div class="hud-item" id="score-display">Score: 0</div>
+        </div>
+    </div>
+
+    <script src="audio.js"></script>
+    <script src="words.js"></script>
+    <script src="game_graphics.js"></script>
+    <script src="game_logic.js"></script>
+</body>
+</html>

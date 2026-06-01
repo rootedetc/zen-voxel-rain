@@ -1,0 +1,10 @@
+{
+  "name": "zen-voxel-rain",
+  "version": "1.0.0",
+  "description": "A relaxing Zen Voxel Rain typing game",
+  "main": "index.html",
+  "scripts": {
+    "dev": "npx http-server -p 3000"
+  },
+  "dependencies": {}
+}

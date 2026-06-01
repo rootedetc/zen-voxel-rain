@@ -1,0 +1,147 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Outfit', sans-serif;
+    user-select: none;
+}
+
+body, html {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    background-color: #3C3B6E;
+}
+
+#game-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#three-canvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+#words-layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Glassmorphism Panels */
+.overlay-panel {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 10;
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    border-radius: 20px;
+    padding: 40px;
+    width: 90%;
+    max-width: 480px;
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.6);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.glow-text {
+    color: #FFFFFF;
+    text-shadow: 0 0 10px #4FD1C5, 0 0 20px #4FD1C5;
+    margin-bottom: 10px;
+}
+
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+    transform: translate(-50%, -45%) scale(0.95);
+}
+
+/* Styling for projected falling words */
+.falling-word {
+    position: absolute;
+    font-size: 1.2rem;
+    font-weight: 600;
+    padding: 6px 12px;
+    background: rgba(40, 44, 52, 0.4);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    transform: translate(-50%, -100%);
+    transition: transform 0.05s linear;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+}
+
+.falling-word .typed {
+    color: #4FD1C5;
+    text-shadow: 0 0 8px #4FD1C5;
+}
+
+.falling-word .current {
+    color: #FFF;
+    border-bottom: 2px solid #4FD1C5;
+    animation: pulse 1s infinite alternate;
+}
+
+.falling-word .untyped {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* In-game HUD styling */
+#hud {
+    position: absolute;
+    top: 20px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 40px;
+    z-index: 5;
+    pointer-events: none;
+}
+
+.hud-item {
+    background: rgba(255, 255, 255, 0.08);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    padding: 10px 20px;
+    border-radius: 12px;
+    color: #FFF;
+    font-weight: 600;
+}
+
+#stability-bar-container {
+    width: 300px;
+    height: 12px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 6px;
+    overflow: hidden;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+#stability-bar {
+    height: 100%;
+    background: linear-gradient(90deg, #E6B0AA, #70C1B3);
+    transition: width 0.3s ease;
+}
+
+/* Animations */
+@keyframes pulse {
+    0% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
